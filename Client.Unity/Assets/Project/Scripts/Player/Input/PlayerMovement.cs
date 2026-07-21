@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 MoveInput { get; private set; }
     public Vector2 Velocity { get; private set; }
     public bool IsMoving => MoveInput.sqrMagnitude > 0.01f;
-    public Vector2 FacingDirection { get; private set; }
+    public Vector2 FacingDirection { get; private set; } = Vector2.down;
 
     private void Awake()
     {
