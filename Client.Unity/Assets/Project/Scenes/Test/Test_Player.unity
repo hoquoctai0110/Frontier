@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 785479850}
   - component: {fileID: 785479854}
   - component: {fileID: 785479853}
+  - component: {fileID: 785479855}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -263,6 +264,7 @@ Transform:
   m_Children:
   - {fileID: 1096180922}
   - {fileID: 1898550539}
+  - {fileID: 1201391696}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785479853
@@ -290,6 +292,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
+--- !u!114 &785479855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b91251dfd718b40bc539d01823462c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  interactionPoint: {fileID: 1201391696}
+  interactionRadius: 0.5
+  interactionOffset: 0.5
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1096180921
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +437,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1201391695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201391696}
+  m_Layer: 0
+  m_Name: InteractionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201391696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201391695}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 785479852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1210357288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -472,8 +523,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6959115635368662941, guid: f7f5ec4e51ffc5444831ebcb32077096, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1603861196}
   m_SourcePrefab: {fileID: 100100000, guid: f7f5ec4e51ffc5444831ebcb32077096, type: 3}
+--- !u!1 &1603861193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6959115635368662941, guid: f7f5ec4e51ffc5444831ebcb32077096, type: 3}
+  m_PrefabInstance: {fileID: 1210357288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603861196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603861193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20fca2133cf668429cc9cdb70dd7d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestInteractable
 --- !u!1 &1871878680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2811,6 @@ SceneRoots:
   - {fileID: 163335530}
   - {fileID: 785479852}
   - {fileID: 1347045791443287089}
+  - {fileID: 7870941933015518439}
   - {fileID: 1210357288}
   - {fileID: 4192286577333888065}
-  - {fileID: 7870941933015518439}

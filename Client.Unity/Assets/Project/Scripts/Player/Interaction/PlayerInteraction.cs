@@ -1,3 +1,4 @@
+using Unity.Hierarchy;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInputReader))]
@@ -49,7 +50,26 @@ public sealed class PlayerInteraction : MonoBehaviour
 
     private void FindInteractionTarget()
     {
-
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            interactionPoint.position,
+            interactionRadius,
+            interactionLayer); 
+        currentTarget = null;
+        float nearestDistance = float.MaxValue;
+        foreach (Collider2D hit in hits)
+        {
+            IInteractable interactable = hit.GetComponentInParent<IInteractable>();
+            if(interactable == null)
+            {
+                continue;
+            } 
+            float distance = Vector2.Distance(interactionPoint.position, hit.ClosestPoint(interactionPoint.position));
+            if(distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                currentTarget = interactable;
+            }
+        }
     }
 
     private void TryInteract() 
