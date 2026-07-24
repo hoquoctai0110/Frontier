@@ -9,7 +9,7 @@ public class TreeResource : MonoBehaviour, IInteractable
     private bool isDead;
 
     [Header("Drop Settings")]
-    [SerializeField] private WoodPickup woodPickupPrefab;
+    [SerializeField] private ItemPickup woodPickupPrefab;
     [SerializeField, Min(1)] private int woodDropAmount = 3;
     [SerializeField] private Transform dropPoint;
     [SerializeField, Min(0f)] private float dropRadius = 0.5f;

@@ -186,7 +186,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.36, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3487124048750802601}
@@ -254,7 +254,7 @@ MonoBehaviour:
   maxHealth: 3
   treeAnimator: {fileID: 3848391209850105713}
   treeCollider: {fileID: 7726356673666082259}
-  woodPickupPrefab: {fileID: 5874724708208936135, guid: 3e58ddcd83a48224b92213d352ca7e9b, type: 3}
+  woodPickupPrefab: {fileID: -574782424845226215, guid: 3e58ddcd83a48224b92213d352ca7e9b, type: 3}
   woodDropAmount: 3
   dropPoint: {fileID: 2221049411307873431}
   dropRadius: 0.5

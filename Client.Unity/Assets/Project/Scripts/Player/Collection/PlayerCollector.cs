@@ -10,14 +10,14 @@ public class PlayerCollector : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        WoodPickup woodPickup = collision.GetComponent<WoodPickup>();
-        if (woodPickup == null) return;
-        CollectWood(woodPickup);
+        ItemPickup itemPickup = collision.GetComponent<ItemPickup>();
+        if (itemPickup == null) return;
+        Collect(itemPickup);
     }
 
-    private void CollectWood(WoodPickup woodPickup)
+    private void Collect(ItemPickup itemPickup)
     {
-        playerInventory.AddWood(woodPickup.WoodAmount);
-        Destroy(woodPickup.gameObject);
+        playerInventory.AddItem(itemPickup.ItemData, itemPickup.Amount);
+        Destroy(itemPickup.gameObject);
     }
 }
